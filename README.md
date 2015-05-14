@@ -16,3 +16,7 @@ Inital Entries
 
 New Feed Selection
 - Expects new feed to replace old feed
+
+Delete Feed Check
+- Checks to see if delete last feed button (doesn't exist) works
+- We will expect that the last item to be undefined if that's the case
