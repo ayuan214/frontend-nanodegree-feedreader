@@ -132,5 +132,25 @@ $(function() {
             expect(feed1).not.toEqual(feed2);
         });
     });
+
+    describe('Additional Tests - Delete Last Feed', function(){
+        var feed1
+        var newFeed = {name: "name", url: "url"};
+        allFeeds.push(newFeed);
+
+        beforeEach(function(done){
+            loadFeed(0);
+            setTimeout(function(){
+                feed1 = $('.feed').html;
+                done();
+            },1000)
+        });
+
+        it('Expect feed length to be lower by one upon click of delete button', function(){
+            $('.delete-button').click();
+            expect($('.feed-list li a[data-id =' + allFeeds.length + ']')).not.toBeDefined();
+        })
+            
+    });
     
 }());
