@@ -22,10 +22,10 @@ $(function() {
          * page?
          */ 
 
-         // it would return expect 0 to not be 0; 
+         // it would return expect to not be zero and to be defined; 
         it('allFeeds is defined', function() {
-            expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+            expect(allFeeds).toBeDefined(); // we expect all Feeds to be defined
+            expect(allFeeds.length).not.toBe(0); // expect array to not by empty
         });
 
 
@@ -36,8 +36,8 @@ $(function() {
 
          it('ensure each allFeeds url isn\'t empty', function() {
             for (var i = 0; allFeeds.length <0; i++)
-                expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url.length).not.toBe(0);
+                expect(allFeeds[i].url).toBeDefined(); // check to make sure each Feed is defined
+                expect(allFeeds[i].url.length).not.toBe(0); //check to make sure the length is not equal to zero
          });
 
 
@@ -48,9 +48,9 @@ $(function() {
 
          it('ensure each allFeeds name isn\'t empty', function() {
             for (var i = 0; allFeeds.length <0; i++)
-                expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name.length).not.toBe("");
-                expect(allFeeds[i].name.length).not.toBe(null);
+                expect(allFeeds[i].name).toBeDefined(); // check to make sure that it is defined
+                expect(allFeeds[i].name.length).not.toBe(""); // check to make sure it is not equal to empty 
+                expect(allFeeds[i].name.length).not.toBe(null); //check to make sure it is not null
          });
     });
 
@@ -64,7 +64,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
          it('check menu is hidden on load', function() {
-            expect($('body').hasClass('menu-hidden')).toBeTruthy();
+            expect($('body').hasClass('menu-hidden')).toBeTruthy(); //upon load we expect menu to be hidden
          });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -72,10 +72,10 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
           it('check toggle visbility on click', function() {
-            $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBeFalsy();
-            $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBeTruthy();
+            $('.menu-icon-link').click(); //upon click
+            expect($('body').hasClass('menu-hidden')).toBeFalsy(); // menu should not be hidden
+            $('.menu-icon-link').click(); //upon click again
+            expect($('body').hasClass('menu-hidden')).toBeTruthy(); // menu should be hidden again
             // when you make a command such as click it actually executes it;
           })
 
@@ -86,15 +86,15 @@ $(function() {
         var feed_return;
 
         beforeEach(function(done){
-            loadFeed(0);
+            loadFeed(0); //load first feed
             setTimeout(function(){
                 feed_return = $('.feed').html;
                 done();
-            },100)
+            },300)
         });
 
         it('Should check if returned array size isn\'t zero', function(){
-            expect (feed_return.length).toBeGreaterThan(0);
+            expect (feed_return.length).toBeGreaterThan(0); // make sure returned feed is not equal to zero
         });
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -117,19 +117,19 @@ $(function() {
         var feed2;
 
         beforeEach(function(done){
-            loadFeed(0);
+            loadFeed(0);//load f
             setTimeout(function(){
                 feed1 = $('.feed').html;
                 done();
-            },100);
+            },300);
         });
 
         it('New Feed content to change', function(){
             loadFeed(1);
             setTimeout(function(){
                 feed2 = $('.feed').html;
-            },100);
-            expect(feed1).not.toEqual(feed2);
+            },300);
+            expect(feed1).not.toEqual(feed2); //checks to make sure feed not the same. This tells us it has changed
         });
     });
 
