@@ -23,7 +23,7 @@ $(function() {
          */ 
 
          // it would return expect 0 to not be 0; 
-        it('are defined', function() {
+        it('allFeeds is defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -63,7 +63,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-         it('check menu is hidden', function() {
+         it('check menu is hidden on load', function() {
             expect($('body').hasClass('menu-hidden')).toBeTruthy();
          });
          /* TODO: Write a test that ensures the menu changes
@@ -93,7 +93,7 @@ $(function() {
             },100)
         });
 
-        it('Should check if there is something isn\'t zero', function(){
+        it('Should check if returned array size isn\'t zero', function(){
             expect (feed_return.length).toBeGreaterThan(0);
         });
         /* TODO: Write a test that ensures when the loadFeed
