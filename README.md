@@ -1,5 +1,7 @@
 # Project Overview
 
+Purpose: Utilized Jasmine JavaScript Framework to write a number of tests against a pre-existing application.
+
 Open index.html
 
 RSS Feed Test
