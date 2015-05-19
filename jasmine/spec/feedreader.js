@@ -77,7 +77,7 @@ $(function() {
             $('.menu-icon-link').click(); //upon click again
             expect($('body').hasClass('menu-hidden')).toBeTruthy(); // menu should be hidden again
             // when you make a command such as click it actually executes it;
-          })
+          });
 
     });
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -90,7 +90,7 @@ $(function() {
             setTimeout(function(){
                 feed_return = $('.feed').html;
                 done();
-            },300)
+            },300);
         });
 
         it('Should check if returned array size isn\'t zero', function(){
@@ -113,7 +113,7 @@ $(function() {
              * Remember, loadFeed() is asynchronous.
              */    
 
-        var feed1
+        var feed1;
         var feed2;
 
         beforeEach(function(done){
@@ -134,7 +134,7 @@ $(function() {
     });
 
     describe('Additional Tests - Delete Last Feed', function(){
-        var feed1
+        var feed1;
         var newFeed = {name: "name", url: "url"};
         allFeeds.push(newFeed);
 
@@ -143,13 +143,13 @@ $(function() {
             setTimeout(function(){
                 feed1 = $('.feed').html;
                 done();
-            },1000)
+            },1000);
         });
 
         it('Expect feed length to be lower by one upon click of delete button', function(){
             $('.delete-button').click();
             expect($('.feed-list li a[data-id =' + allFeeds.length + ']')).not.toBeDefined();
-        })
+        });
             
     });
     
